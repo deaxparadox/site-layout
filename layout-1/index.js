@@ -1,20 +1,24 @@
 "use strict";
 console.log("Welcome Nitish");
 
-let closeLeftStatus = true;          // on
-const closeLeft = () => {
-    if (closeLeftStatus) {
-        document.querySelector("#close-button > button").onclick = () => {
-            document.querySelector("#left").style.width = "0%";
-            closeLeftStatus = false
-        }
-    } else {
-        
-        document.querySelector("#close-button > button").onclick = () => {
-            document.querySelector("#left").style.width = "20%";
-            closeLeftStatus = false
-        }
+
+let menuStatus = false;
+const menuOpen = () => {
+    document.querySelector("#menu").onclick = () => {
+        document.querySelector("#menu-body").style.height = "100vh";
+        document.querySelector("#menu-body-box").style.height = '80vh';
+        menuStatus = true;
+
+    }
+}
+const menuClose = () => {
+    document.querySelector("#menu-body-close").onclick = () => {
+        document.querySelector("#menu-body").style.height = "0vh";
+        document.querySelector("#menu-body-box").style.height = '0vh';
+        menuStatus = false;
+
     }
 }
 
-closeLeft();
+menuOpen()
+menuClose()

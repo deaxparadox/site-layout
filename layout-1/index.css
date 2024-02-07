@@ -1,69 +1,134 @@
 * {
-    background-color: aliceblue;
+    /* background-color: aliceblue; */
     color: rgb(70, 70, 70);
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 body {
-    display: flex;
     margin: 0;
 }
 
-
-
-#left {
-    background-color: rgb(0, 64, 119);
-    color: whitesmoke;
-    width: 20%;
-    height: 100vh;
+#navbar {
+    background-color: rgb(240, 240, 240);
+    box-shadow: 0px 3px 3px 2px rgb(209, 209, 209);
+    transition: .3s;
 }
-#left > div, ul, li, a, h1, h2, h3, button {
+
+#navbar,
+#navbar > #left,
+#navbar > #right {
+    display: flex;
+}
+#navbar {
+    justify-content: space-between;
+}
+#navbar > #right > a {
+    display: inline-block;
+}
+
+
+.navbar-item {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+#navbar > #left > #menu {
+    height: fit-content;
     background-color: inherit;
-    color: inherit;
-}
-#left > #close-button, #links {
-    margin: 0;
-}
-
-
-
-#left > #close-button {
-    height: 50px;
-    display: flex;
-    justify-content: end;
-}
-#left > #close-button > button {
-    margin-right: 20px;
-    margin-top: 20px;
-    border-radius: 50%;
-    border: none;
-    /* border-color: rgb(0, 64, 119); */
-    font-size: larger;
-    transition: .4s;
+    
+    border-radius: 40px;
+    border: 2px solid rgb(240, 240, 240);
+    padding: 3px 10px;
     cursor: pointer;
+    transition: .5s;
 }
-#left > #close-button > button:hover {
-    border-color: tomato;
-    color: red;
+#navbar > #left > #menu:hover {
+    background-color: rgb(209, 209, 209);
+    color: black;
+    /* border-color: rgb(146, 146, 146); */
+    border-color: brown;
 }
 
-
-#left > #links {
-    /* background-color: blueviolet; */
-    height: calc(100vh - 5px);
+#navbar > #right > .link,
+#navbar > #left > .link {
     margin-top: 20px;
 }
-#links > #links-body {
+
+
+
+#navbar > #left > #site {
+    margin-left: 20px;
+    margin-right: 20px;
+}
+#navbar > #left > #site > a {
+    text-decoration: none;
+    color: brown;
+}
+#navbar > #left > #site > a:hover {
+    text-shadow: 0px 0px 1px brown;
+}
+
+#navbar > #right > #github > img {
+    width: 30px;
+    height: 30px;
+    
+}
+#navbar > #right > #github {
+    margin-right: 30px;
+}
+
+
+
+
+
+
+#menu-body {
+    z-index: 2;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 0vh;
+    background-color: rgba(0, 0, 0, 0.171);
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    transition: .3s;
+}
+
+#menu-body > #menu-body-box {
+    width: 80vw;
+    height: 0vh;
+    transition: .5s;
+    transform-origin: top;
+}
+
+
+#menu-body > #menu-body-box > #menu-body-close {
+    display: flex;
+    justify-content: center;
+}
+#menu-body > #menu-body-box > #menu-body-close > button {
+    /* border-radius: 50%; */
+    padding-top: 4px;
+    padding-bottom: 4px;
+    transform: translateY(-20px);
     background-color: inherit;
-    color: inherit;
+    border: none;
+    font-size: xx-large;
+    cursor: pointer;
+    transition: .4s;
 }
-#left > #links > #links-body > .link {
-    display: block;
-    text-align: center;
+#menu-body > #menu-body-box > #menu-body-close > button:hover {
+    color: brown;
+    text-shadow: 0px 0px 3px brown;
+}
+#menu-body > #menu-body-box > #menu-body-inner {
+    background-color: rgb(240, 240, 240);
     width: 100%;
-    padding-top: 10px;
-    padding-bottom: 10px;
-}
-#left > #links > #links-body > .link:hover {
-    background-color: rgb(29, 79, 122);
+    height: 100%;
+    box-shadow: 0px 0px 3px 2px rgb(163, 163, 163);
+    border-radius: 12px;
 }
